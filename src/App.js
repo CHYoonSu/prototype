@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
+import CounselingPage from "./MainPage/CounselingPage";
+import CalendarPage from "./MainPage/CalendarPage";
+import HobbyList from "./MainPage/HobbyList";
+import QnAPage from "./MainPage/QnAPage";
+import GlobalStyle from "./GlobalStyle";
+import Header from "./Header/HeaderBox";
 
+const Wrap = styled.div``;
+
+const Page = styled.div``;
+const Footer = styled.div`
+  background-color: aliceblue;
+  height: 200px;
+`;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrap>
+      <GlobalStyle />
+      <Header />
+      <Page>
+        <CounselingPage />
+        <CalendarPage />
+        <HobbyList />
+        <QnAPage />
+      </Page>
+      <Footer>
+        <h1>footer</h1>
+      </Footer>
+    </Wrap>
   );
 }
 
